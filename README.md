@@ -1,1 +1,0 @@
-# Leonardo-LC.github.io
