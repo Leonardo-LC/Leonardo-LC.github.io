@@ -1,27 +1,40 @@
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: rgba(255, 255, 255, 0.03);
-    --bg-card: rgba(20, 20, 25, 0.6);
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0;
-    --accent-1: #00f0ff;
-    --accent-2: #b026ff;
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-primary: #0B0F17;
+    --bg-secondary: #131B2A;
+    --bg-card: #131B2A;
+    --border: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --accent-1: #10B981;
+    --primary-hover: #059669;
+    --accent-2: #38BDF8;
+    --secondary-hover: #1D4ED8;
+    --tag-bg: #0F291E;
+    --tag-text: #34D399;
+    --nav-bg: rgba(11, 15, 23, 0.8);
+    --glass-border: #1E293B;
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    --nav-bg: rgba(0, 51, 102, 0.9); /* Azul UnB */
 }
 
 body.light-mode {
-    --bg-primary: #f2f5f3;
-    --bg-secondary: rgba(0, 102, 51, 0.05);
-    --bg-card: rgba(255, 255, 255, 0.8);
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --accent-1: #006633; /* Verde UnB */
-    --accent-2: #003366; /* Azul UnB */
-    --glass-border: rgba(0, 102, 51, 0.15);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 51, 102, 0.1);
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --border: #E2E8F0;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --accent-1: #006633;
+    --primary-hover: #004D26;
+    --accent-2: #003366;
+    --secondary-hover: #002244;
+    --tag-bg: #E6F0EA;
+    --tag-text: #006633;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: #E2E8F0;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -37,6 +50,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6, .logo {
@@ -69,7 +83,7 @@ ul {
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.4;
+    opacity: 0.15;
     animation: float 20s infinite ease-in-out alternate;
 }
 
@@ -111,7 +125,7 @@ ul {
     padding: 1rem 0;
     backdrop-filter: blur(10px);
     background: var(--nav-bg);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-content {
@@ -129,10 +143,6 @@ ul {
     letter-spacing: -0.5px;
 }
 
-.logo span {
-    color: var(--accent-1);
-}
-
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -146,7 +156,7 @@ ul {
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--accent-1);
 }
 
 .nav-links a::after {
@@ -156,7 +166,7 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    background: var(--accent-1);
     transition: var(--transition);
 }
 
@@ -171,8 +181,8 @@ ul {
 }
 
 .icon-btn {
-    background: transparent;
-    border: none;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     color: var(--text-primary);
     font-size: 1.2rem;
     cursor: pointer;
@@ -185,8 +195,9 @@ ul {
 }
 
 .icon-btn:hover {
-    background: var(--bg-secondary);
-    color: var(--accent-1);
+    background: var(--accent-2);
+    color: #fff;
+    border-color: var(--accent-2);
 }
 
 /* Base Components */
@@ -204,16 +215,14 @@ main {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     font-weight: 800;
-    background: linear-gradient(to right, #fff, var(--text-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-primary);
 }
 
 .glass-card {
     background: var(--bg-card);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: var(--glass-shadow);
@@ -222,8 +231,8 @@ main {
 
 .glass-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero */
@@ -241,9 +250,8 @@ main {
 .badge {
     display: inline-block;
     padding: 0.4rem 1rem;
-    background: rgba(0, 240, 255, 0.1);
-    color: var(--accent-1);
-    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: var(--tag-bg);
+    color: var(--tag-text);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -288,16 +296,16 @@ main {
     cursor: pointer;
     border: none;
     outline: none;
+    transition: var(--transition);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(176, 38, 255, 0.3);
+    background: var(--accent-1);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(176, 38, 255, 0.5);
+    background: var(--primary-hover);
     transform: translateY(-2px);
 }
 
@@ -314,15 +322,15 @@ main {
     height: 45px;
     border-radius: 50%;
     background: var(--bg-secondary);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--border);
     font-size: 1.2rem;
     color: var(--text-secondary);
 }
 
 .social-links a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--accent-1);
-    border-color: var(--accent-1);
+    background: var(--accent-2);
+    color: #ffffff;
+    border-color: var(--accent-2);
     transform: translateY(-3px);
 }
 
@@ -354,7 +362,7 @@ main {
     top: 0;
     height: 100%;
     width: 2px;
-    background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
+    background: var(--border);
     border-radius: 2px;
 }
 
@@ -377,7 +385,6 @@ main {
     background: var(--bg-primary);
     border: 2px solid var(--accent-1);
     z-index: 2;
-    box-shadow: 0 0 10px var(--accent-1);
 }
 
 .timeline-header {
@@ -389,23 +396,24 @@ main {
 
 .timeline-header h3 {
     font-size: 1.3rem;
-    color: var(--accent-1);
+    color: var(--text-primary);
 }
 
 .date {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     display: flex;
     align-items: center;
     gap: 0.4rem;
     background: var(--bg-secondary);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
+    border: 1px solid var(--border);
 }
 
 .company {
     font-size: 1.1rem;
-    color: var(--text-primary);
+    color: var(--accent-2);
     margin-bottom: 1.5rem;
     font-weight: 500;
     display: flex;
@@ -425,7 +433,7 @@ main {
 }
 
 .achievements li strong {
-    color: #fff;
+    color: var(--text-primary);
 }
 
 /* Skills */
@@ -441,7 +449,7 @@ main {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    color: var(--accent-1);
+    color: var(--accent-2);
 }
 
 .skill-tags {
@@ -452,25 +460,19 @@ main {
 
 .skill-tag {
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
+    background: var(--tag-bg);
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: var(--tag-text);
     transition: var(--transition);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-body.light-mode .skill-tag {
-    background: rgba(0, 0, 0, 0.05);
-}
-
 .skill-tag:hover {
-    background: rgba(176, 38, 255, 0.1);
-    border-color: var(--accent-2);
+    background: var(--accent-2);
     color: #fff;
     transform: translateY(-2px);
 }
@@ -490,8 +492,9 @@ body.light-mode .skill-tag {
 
 .edu-icon {
     font-size: 2.5rem;
-    color: var(--accent-2);
-    background: rgba(176, 38, 255, 0.1);
+    color: var(--accent-1);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     padding: 1rem;
     border-radius: 16px;
     display: flex;
@@ -502,10 +505,11 @@ body.light-mode .skill-tag {
 .edu-info h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    color: var(--text-primary);
 }
 
 .institution {
-    color: var(--text-secondary);
+    color: var(--accent-2);
     font-weight: 500;
     margin-bottom: 0.3rem;
 }
@@ -524,8 +528,8 @@ body.light-mode .skill-tag {
 footer {
     padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid var(--glass-border);
-    background: rgba(10, 10, 15, 0.5);
+    border-top: 1px solid var(--border);
+    background: var(--bg-primary);
 }
 
 .footer-content {
@@ -538,12 +542,12 @@ footer {
 }
 
 .footer-content p {
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
 .footer-content p i {
-    color: #ff3366;
+    color: var(--accent-1);
 }
 
 /* Animations */
