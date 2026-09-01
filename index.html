@@ -17,6 +17,7 @@
 
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -29,13 +30,17 @@
 
     <nav class="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">Leonardo<span>dev</span></a>
+            <a href="#" class="logo">Leonardo</a>
             <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#experiencia">Experiência</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#sobre" data-i18n="nav-about">Sobre</a></li>
+                <li><a href="#experiencia" data-i18n="nav-experience">Experiência</a></li>
+                <li><a href="#skills" data-i18n="nav-skills">Habilidades</a></li>
+                <li><a href="#formacao" data-i18n="nav-education">Formação</a></li>
             </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme"><i class="ri-moon-line"></i></button>
+                <button id="lang-toggle" class="icon-btn" aria-label="Toggle Language">EN</button>
+            </div>
         </div>
     </nav>
 
@@ -43,11 +48,11 @@
         <!-- Hero Section -->
         <section id="hero" class="hero fade-in">
             <div class="hero-content">
-                <span class="badge">Disponível para oportunidades</span>
-                <h1 class="title">Olá, eu sou <br>
+                <span class="badge" data-i18n="hero-badge">Disponível para oportunidades</span>
+                <h1 class="title" data-i18n="hero-title">Olá, eu sou <br>
                     <span class="gradient-text">Leonardo Lopes Cruz</span>
                 </h1>
-                <p class="subtitle">
+                <p class="subtitle" data-i18n="hero-subtitle">
                     Engenheiro de Software construindo soluções escaláveis e interfaces excepcionais.
                     Especialista em ecossistemas de IA, Sistemas Distribuídos e FullStack.
                 </p>
@@ -66,8 +71,8 @@
 
         <!-- Sobre Mim Section -->
         <section id="sobre" class="section fade-in">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="glass-card about-card">
+            <h2 class="section-title" data-i18n="about-title">Sobre Mim</h2>
+            <div class="glass-card about-card" data-i18n="about-text">
                 <p>
                     Graduando em <strong>Engenharia de Software</strong> pela Universidade de Brasília (UnB), atualmente
                     no 5º semestre.
@@ -88,28 +93,22 @@
 
         <!-- Experiência Profissional Section -->
         <section id="experiencia" class="section fade-in">
-            <h2 class="section-title">Experiência Profissional</h2>
+            <h2 class="section-title" data-i18n="experience-title">Experiência Profissional</h2>
             <div class="timeline">
 
                 <div class="timeline-item glass-card">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Estagiário em Ciência de Dados e Eng. de Software</h3>
-                            <span class="date"><i class="ri-calendar-line"></i> Fev 2026 – Presente</span>
+                            <h3 data-i18n="exp1-role">Estagiário em Ciência de Dados e Eng. de Software</h3>
+                            <span class="date"><i class="ri-calendar-line"></i> <span data-i18n="exp1-date">Fev 2026 – Presente</span></span>
                         </div>
-                        <h4 class="company"><i class="ri-building-line"></i> Ministério dos Transportes | Brasília-DF
-                        </h4>
-                        <ul class="achievements">
-                            <li><strong>IA Soberana (RAG / LLM):</strong> Desenvolvimento e integração de interface com
-                                React/Vite. Rastreabilidade de anexos, persistência de sessões, renderização de citações
-                                clicáveis (processos SEI), integração de microfone e AI tools.</li>
-                            <li><strong>Autenticação e UX/UI:</strong> Fluxos de controle de acesso, gerenciamento de
-                                perfil, responsividade multiplataforma e adequação às diretrizes da IA Soberana.</li>
-                            <li><strong>Sistemas Distribuídos (EnvIA):</strong> Engenharia de componentes centrais de
-                                APIs e despachantes assíncronos via Apache Kafka, com adaptadores escaláveis.</li>
-                            <li><strong>Fluxo Ágil:</strong> Gestão de demandas e Merge Requests via Taiga e
-                                monitoramento via MobaXterm.</li>
+                        <h4 class="company"><i class="ri-building-line"></i> Ministério dos Transportes | Brasília-DF</h4>
+                        <ul class="achievements" data-i18n="exp1-achievements">
+                            <li><strong>IA Soberana (RAG / LLM):</strong> Desenvolvimento e integração de interface com React/Vite. Rastreabilidade de anexos, persistência de sessões, renderização de citações clicáveis (processos SEI), integração de microfone e AI tools.</li>
+                            <li><strong>Autenticação e UX/UI:</strong> Fluxos de controle de acesso, gerenciamento de perfil, responsividade multiplataforma e adequação às diretrizes da IA Soberana.</li>
+                            <li><strong>Sistemas Distribuídos (EnvIA):</strong> Engenharia de componentes centrais de APIs e despachantes assíncronos via Apache Kafka, com adaptadores escaláveis.</li>
+                            <li><strong>Fluxo Ágil:</strong> Gestão de demandas e Merge Requests via Taiga e monitoramento via MobaXterm.</li>
                         </ul>
                     </div>
                 </div>
@@ -118,20 +117,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>Desenvolvedor FullStack e Assessor de Talentos</h3>
-                            <span class="date"><i class="ri-calendar-line"></i> Out 2025 – Abr 2026</span>
+                            <h3 data-i18n="exp2-role">Desenvolvedor FullStack e Assessor de Talentos</h3>
+                            <span class="date"><i class="ri-calendar-line"></i> <span data-i18n="exp2-date">Out 2025 – Abr 2026</span></span>
                         </div>
-                        <h4 class="company"><i class="ri-building-line"></i> CJR - Empresa Júnior de Computação |
-                            Brasília-DF</h4>
-                        <ul class="achievements">
-                            <li><strong>Consultoria Estratégica:</strong> Verificação de viabilidade técnica/negócio
-                                para a UNAREG, mapeamento de requisitos e cenários de implementação.</li>
-                            <li><strong>Sistemas Web:</strong> Desenvolvimento FullStack de ponta a ponta com NestJS
-                                (backend) e NextJS (frontend).</li>
-                            <li><strong>Bancos de Dados:</strong> Aplicação de Prisma ORM para gestão e modelagem
-                                eficiente em bancos relacionais.</li>
-                            <li><strong>Colaboração:</strong> Trabalho em equipe multiprofissional com Git/GitHub, Slack
-                                e Notion (Metodologias ágeis).</li>
+                        <h4 class="company"><i class="ri-building-line"></i> CJR - Empresa Júnior de Computação | Brasília-DF</h4>
+                        <ul class="achievements" data-i18n="exp2-achievements">
+                            <li><strong>Consultoria Estratégica:</strong> Verificação de viabilidade técnica/negócio para a UNAREG, mapeamento de requisitos e cenários de implementação.</li>
+                            <li><strong>Sistemas Web:</strong> Desenvolvimento FullStack de ponta a ponta com NestJS (backend) e NextJS (frontend).</li>
+                            <li><strong>Bancos de Dados:</strong> Aplicação de Prisma ORM para gestão e modelagem eficiente em bancos relacionais.</li>
+                            <li><strong>Colaboração:</strong> Trabalho em equipe multiprofissional com Git/GitHub, Slack e Notion (Metodologias ágeis).</li>
                         </ul>
                     </div>
                 </div>
@@ -141,37 +135,38 @@
 
         <!-- Technical Skills Section -->
         <section id="skills" class="section fade-in">
-            <h2 class="section-title">Habilidades Técnicas</h2>
+            <h2 class="section-title" data-i18n="skills-title">Habilidades Técnicas</h2>
             <div class="skills-grid">
 
                 <div class="skill-category glass-card">
-                    <h3><i class="ri-code-s-slash-line"></i> Frontend</h3>
+                    <h3 data-i18n="skills-frontend"><i class="ri-code-s-slash-line"></i> Frontend</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Vite</span>
-                        <span class="skill-tag">HTML5 / CSS3</span>
-                        <span class="skill-tag">UX/UI Design</span>
+                        <span class="skill-tag"><i class="devicon-react-original"></i> React</span>
+                        <span class="skill-tag"><i class="devicon-nextjs-original"></i> Next.js</span>
+                        <span class="skill-tag"><i class="devicon-vitejs-plain"></i> Vite</span>
+                        <span class="skill-tag"><i class="devicon-html5-plain"></i> HTML5</span>
+                        <span class="skill-tag"><i class="devicon-css3-plain"></i> CSS3</span>
+                        <span class="skill-tag"><i class="ri-brush-line"></i> UX/UI Design</span>
                     </div>
                 </div>
 
                 <div class="skill-category glass-card">
-                    <h3><i class="ri-server-line"></i> Backend</h3>
+                    <h3 data-i18n="skills-backend"><i class="ri-server-line"></i> Backend</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">NestJS</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Prisma ORM</span>
-                        <span class="skill-tag">Bancos Relacionais</span>
+                        <span class="skill-tag"><i class="devicon-nestjs-original"></i> NestJS</span>
+                        <span class="skill-tag"><i class="devicon-csharp-plain"></i> C#</span>
+                        <span class="skill-tag"><i class="devicon-prisma-original"></i> Prisma ORM</span>
+                        <span class="skill-tag"><i class="devicon-sqldeveloper-plain"></i> SQL</span>
                     </div>
                 </div>
 
                 <div class="skill-category glass-card">
-                    <h3><i class="ri-tools-line"></i> Ferramentas e Infraestrutura</h3>
+                    <h3 data-i18n="skills-tools"><i class="ri-tools-line"></i> Ferramentas e Infraestrutura</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Apache Kafka</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">Integração LLM/RAG</span>
+                        <span class="skill-tag"><i class="devicon-apachekafka-original"></i> Apache Kafka</span>
+                        <span class="skill-tag"><i class="devicon-docker-plain"></i> Docker</span>
+                        <span class="skill-tag"><i class="devicon-github-original"></i> Git / GitHub</span>
+                        <span class="skill-tag"><i class="ri-robot-2-line"></i> Integração LLM/RAG</span>
                     </div>
                 </div>
 
@@ -180,23 +175,23 @@
 
         <!-- Formação e Idiomas -->
         <section id="formacao" class="section fade-in">
-            <h2 class="section-title">Formação e Cursos</h2>
+            <h2 class="section-title" data-i18n="education-title">Formação e Cursos</h2>
             <div class="education-grid">
 
                 <div class="glass-card education-card">
                     <div class="edu-icon"><i class="ri-graduation-cap-line"></i></div>
                     <div class="edu-info">
-                        <h3>Bacharelado em Engenharia de Software</h3>
-                        <p class="institution">Universidade de Brasília (UnB)</p>
-                        <p class="date">2024 – 2029 | Brasília-DF</p>
+                        <h3 data-i18n="edu-degree">Bacharelado em Engenharia de Software</h3>
+                        <p class="institution" data-i18n="edu-uni">Universidade de Brasília (UnB)</p>
+                        <p class="date" data-i18n="edu-date">2024 – 2029 | Brasília-DF</p>
                     </div>
                 </div>
 
                 <div class="glass-card education-card">
                     <div class="edu-icon"><i class="ri-global-line"></i></div>
                     <div class="edu-info">
-                        <h3>Idiomas</h3>
-                        <ul class="languages-list">
+                        <h3 data-i18n="lang-title">Idiomas</h3>
+                        <ul class="languages-list" data-i18n="lang-list">
                             <li><strong>Inglês:</strong> Avançado (Certificação FCE - B2, Curso CNA Master)</li>
                             <li><strong>Espanhol:</strong> Intermediário/Avançado</li>
                             <li><strong>Português:</strong> Nativo</li>
@@ -211,7 +206,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Leonardo Lopes Cruz Construído com <i class="ri-heart-fill"></i></p>
+            <p><span data-i18n="footer-text">&copy; 2026 Leonardo Lopes Cruz Construído com </span><i class="ri-heart-fill"></i></p>
             <div class="social-links">
                 <a href="https://github.com/Leonardo-LC" target="_blank"><i class="ri-github-fill"></i></a>
                 <a href="https://www.linkedin.com/in/leonardo-lopes-66a52b239/" target="_blank"><i
