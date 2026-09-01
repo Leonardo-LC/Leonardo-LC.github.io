@@ -13,14 +13,14 @@
 
 body.light-mode {
     --bg-primary: #f2f5f3;
-    --bg-secondary: rgba(0, 90, 28, 0.05);
+    --bg-secondary: rgba(0, 102, 51, 0.05);
     --bg-card: rgba(255, 255, 255, 0.8);
     --text-primary: #1a202c;
     --text-secondary: #4a5568;
-    --accent-1: #005A1C; /* Verde UnB */
-    --accent-2: #004F9E; /* Azul UnB */
-    --glass-border: rgba(0, 90, 28, 0.15);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 79, 158, 0.1);
+    --accent-1: #006633; /* Verde UnB */
+    --accent-2: #003366; /* Azul UnB */
+    --glass-border: rgba(0, 102, 51, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 51, 102, 0.1);
 }
 
 * {
