@@ -9,6 +9,7 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --nav-bg: rgba(0, 51, 102, 0.9); /* Azul UnB */
 }
 
 body.light-mode {
@@ -109,7 +110,7 @@ ul {
 .navbar.scrolled {
     padding: 1rem 0;
     backdrop-filter: blur(10px);
-    background: rgba(10, 10, 15, 0.8);
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--glass-border);
 }
 
